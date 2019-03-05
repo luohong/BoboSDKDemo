@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.ytxf.bobo.demo"
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 21
+        versionName "1.5.3"
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'armeabi-v7a'
+            universalApk false
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar','*.aar'])
+    api 'com.android.support:support-v4:28.0.0'
+    api 'com.android.support:appcompat-v7:28.0.0'
+    api 'com.android.support.constraint:constraint-layout:1.1.3'
+    api 'com.android.support:gridlayout-v7:28.0.0'
+    api 'com.android.support:recyclerview-v7:28.0.0'
+    api 'cz.msebera.android:httpclient:4.4.1.2'
+    api 'org.msgpack:jackson-dataformat-msgpack:0.8.12'
+    api 'org.adw.library:discrete-seekbar:1.0.1'
+    api 'org.greenrobot:eventbus:3.0.0'
+    api 'com.facebook.fresco:drawee-volley:1.9.0'
+    api 'com.facebook.fresco:fresco:1.9.0'
+    api 'com.facebook.fresco:animated-webp:1.9.0'
+    api 'com.google.code.gson:gson:2.8.5'
+    api 'com.liulishuo.filedownloader:library:1.7.6'
+    api 'com.kaopiz:kprogresshud:1.2.0'
+    api 'com.squareup.okhttp3:okhttp:3.11.0'
+    api 'com.github.yyued:SVGAPlayer-Android:2.3.0'
+}
