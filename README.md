@@ -41,6 +41,7 @@ private static class BoBoUserInfoProvider extends UserInfoProvider {
 
     @Override
     public User getUser() {
+        // 当前登录用户信息
         User user = new User();
         user.id = 204174713220556289l;
         user.name = "test";
@@ -55,7 +56,7 @@ private static class BoBoUserInfoProvider extends UserInfoProvider {
 
     @Override
     public String getToken() {
-        return "9219e18a43d967e4670c26e041105276";
+        return "当前登录用户的TOKEN";
     }
 
     @Override
@@ -70,7 +71,14 @@ private static class BoBoUserInfoProvider extends UserInfoProvider {
 }
 ```
 
-### 3.代码混淆
+### 3.接入微信支付
+- 将 WXPayEntryActivity extends qsbk.app.pay.wxapi.WXPayEntryActivity 
+- 发起微信支付前需要设置APP_ID. PayConstants.WECHAT_APP_ID = "wechat_app_id";
+- 在 WXPayEntryActivity 的 handleResp 方法处理自己的微信支付响应
+- 删除支付宝和微信的jar包（alipaySdk-20180601.jar，libammsdk.jar）
+
+
+### 4.代码混淆
 如果你启用了混淆，请在你的proguard-rules.pro中加入如下代码：
 
 ```
@@ -218,4 +226,18 @@ private static class BoBoUserInfoProvider extends UserInfoProvider {
 -keep public class * extends android.app.backup.BackupAgentHelper
 -keep public class * extends android.preference.Preference
 -keep public class com.android.vending.licensing.ILicensingService
+
+-keep class com.tencent.mm.opensdk.** {
+    *;
+}
+
+-keep class com.tencent.wxop.** {
+    *;
+}
+
+-keep class com.tencent.mm.sdk.** {
+    *;
+}
 ```
+
+
