@@ -34,7 +34,7 @@ public class App extends MultiDexApplication {
 
         @Override
         public String getToken() {
-            return "17deb7469f3b6ff5ee8b44334f0b2851";
+            return "e4d814590c720cc2c67c7e6d594dc518";
         }
 
         @Override

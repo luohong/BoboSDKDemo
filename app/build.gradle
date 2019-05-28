@@ -3,9 +3,9 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.maidrobot.activity"
+        applicationId "com.ytxf.bobo.ltnp"
         minSdkVersion 16
-        targetSdkVersion 28
+        targetSdkVersion 26
         versionCode 21
         versionName "1.5.3"
         multiDexEnabled true
