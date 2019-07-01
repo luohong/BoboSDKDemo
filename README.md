@@ -24,7 +24,7 @@ Gradle编译环境（AndroidStudio）
     api 'com.facebook.fresco:fresco:1.9.0'
     api 'com.facebook.fresco:animated-webp:1.9.0'
     api 'com.google.code.gson:gson:2.8.5'
-    api 'com.liulishuo.filedownloader:library:1.7.6'
+    api 'com.liulishuo.okdownload:okdownload:1.0.5'
     api 'com.kaopiz:kprogresshud:1.2.0'
     api 'com.squareup.okhttp3:okhttp:3.11.0'
     api 'com.github.yyued:SVGAPlayer-Android:2.3.0' 
@@ -101,6 +101,9 @@ private static class BoBoUserInfoProvider extends UserInfoProvider {
 -dontwarn okhttp3.*
 -dontwarn okio.**
 -dontwarn javax.annotation.**
+
+-dontwarn com.liulishuo.okdownload.**
+-keep class com.liulishuo.okdownload.**{*;}
 
 #################
 -keep class com.squareup.** { *; }
@@ -238,6 +241,11 @@ private static class BoBoUserInfoProvider extends UserInfoProvider {
 -keep class com.tencent.mm.sdk.** {
     *;
 }
+
+# MTA
+-keep class com.tencent.stat.** {*;}
+-keep class com.tencent.mid.** {*;}
+-keep class org.json.** {*;}
 ```
 
 

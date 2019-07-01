@@ -40,6 +40,9 @@
 -dontwarn okio.**
 -dontwarn javax.annotation.**
 
+-dontwarn com.liulishuo.okdownload.**
+-keep class com.liulishuo.okdownload.**{*;}
+
 #################
 -keep class com.squareup.** { *; }
 -dontwarn com.squareup.**
@@ -176,3 +179,8 @@
 -keep class com.tencent.mm.sdk.** {
     *;
 }
+
+# MTA
+-keep class com.tencent.stat.** {*;}
+-keep class com.tencent.mid.** {*;}
+-keep class org.json.** {*;}
