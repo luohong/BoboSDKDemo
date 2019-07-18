@@ -9,6 +9,11 @@ android {
         versionCode 21
         versionName "1.5.3"
         multiDexEnabled true
+
+        manifestPlaceholders = [
+                MTA_APPKEY : "ADH564IPLT5H",
+                MTA_CHANNEL: "ltnp"
+        ]
     }
 
     buildTypes {
@@ -48,4 +53,6 @@ dependencies {
     api 'com.kaopiz:kprogresshud:1.2.0'
     api 'com.squareup.okhttp3:okhttp:3.11.0'
     api 'com.github.yyued:SVGAPlayer-Android:2.3.0'
+    api 'com.tencent.mid:mid:4.0.7-Release'
+    api 'com.qq.mta:mta:3.4.7-Release'
 }
